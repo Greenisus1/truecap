@@ -8,6 +8,6 @@ case "${1:-}" in
     python3 -c 'import sys; assert sys.version_info >= (3, 8), "Python 3.8 or newer is required"'
     python3 truecap.py --help >/dev/null
     echo 'truecap ready. Run lists drives only; no test starts automatically.' ;;
-  run) exec python3 truecap.py ;;
+  run) shift;exec python3 fullscreen.py "$@" ;;
   *) echo 'Use: bash app-store.sh install OR bash app-store.sh run'; exit 1 ;;
 esac
